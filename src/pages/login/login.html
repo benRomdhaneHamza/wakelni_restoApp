@@ -1,0 +1,35 @@
+<ion-content padding class="transparent-header" style="background: pink">
+	<div padding>
+		<ion-row>
+			<ion-col>
+				<img class="logo" src="https://res.cloudinary.com/du7wjgy2h/image/upload/v1554641685/logo.png" />
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<h3>Espace restaurant</h3>
+			</ion-col>
+		</ion-row>
+		<form (ngSubmit)="login()">
+		<ion-row>
+			<ion-col>
+				<ion-list inset class="no-border">
+					<ion-item>
+						<ion-label>email</ion-label>
+						<ion-input [(ngModel)]="loginCredentials.email" [ngModelOptions]="{standalone: true}" type="text"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label>Mot de passe</ion-label>
+						<ion-input [(ngModel)]="loginCredentials.password" [ngModelOptions]="{standalone: true}" type="password"></ion-input>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<button ion-button block round type="submit" color="light" class="login-button">Se connecter</button>
+			</ion-col>
+		</ion-row>
+	</form>
+	</div>
+</ion-content>
