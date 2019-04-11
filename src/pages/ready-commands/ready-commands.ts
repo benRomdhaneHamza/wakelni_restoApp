@@ -7,33 +7,30 @@ import moment from 'moment';
 
 @IonicPage()
 @Component({
-	selector: 'page-home',
-	templateUrl: 'home.html'
+  selector: 'page-ready-commands',
+  templateUrl: 'ready-commands.html',
 })
-export class HomePage {
+export class ReadyCommandsPage { // Commands ONTHEWAY
 
-	commands = [];
+  commands = [];
 
-	constructor(public navController: NavController,
+  constructor(public navController: NavController,
 		public authProvider: AuthProvider,
 		private commandsProvider: CommandsProvider) {
-		this.authProvider.verifySession().then(_res => {
-			if (!_res) this.navController.setRoot('LoginPage');
-		});
+			this.authProvider.verifySession().then(_res => {
+				if (!_res) this.navController.setRoot('LoginPage');
+			});
 	}
 
-	// ionViewWillEnter() {
-		 
-	// }
-
-	ionViewDidEnter() {// get new commands
-		this.commandsProvider.getCommands('SENT').then(_res => {
+  ionViewWillEnter() {
+		// get new commands
+		this.commandsProvider.getCommands('ONWAY').then(_res => {
 			this.commands = _res;
-		});
+		}) 
 	}
 
 	showCommandDetails(_command) {
-		this.navController.push('CommandDetailsPage', { command: _command });
+		console.log('command', _command);
 	}
 
 	formatDate(_date) {

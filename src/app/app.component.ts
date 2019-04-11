@@ -25,6 +25,8 @@ export class MyApp {
 		this.pages = [
       { title: 'Nouvelles commandes', component: 'HomePage', active: true, icon: 'home' },
       { title: 'Commandes acceptés', component: 'AcceptedCommandsPage', active: false, icon: 'home' },
+      { title: 'Commandes pretes', component: 'ReadyCommandsPage', active: false, icon: 'home' }
+      // { title: 'Commandes livrés et payé', component: 'AcceptedCommandsPage', active: false, icon: 'home' },
 		];
 		
 		this.activePage.subscribe((selectedPage: any) => {
