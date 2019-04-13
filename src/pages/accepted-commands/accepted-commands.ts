@@ -30,7 +30,7 @@ export class AcceptedCommandsPage {
 	}
 
 	showCommandDetails(_command) {
-		console.log('command', _command);
+		this.navController.push('CommandDetailsPage', { command: _command, parent: 'accepted' });
 	}
 
 	formatDate(_date) {

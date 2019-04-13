@@ -30,7 +30,7 @@ export class ReadyCommandsPage { // Commands ONTHEWAY
 	}
 
 	showCommandDetails(_command) {
-		console.log('command', _command);
+		this.navController.push('CommandDetailsPage', { command: _command, parent: 'ready' });
 	}
 
 	formatDate(_date) {

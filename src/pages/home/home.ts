@@ -33,7 +33,7 @@ export class HomePage {
 	}
 
 	showCommandDetails(_command) {
-		this.navController.push('CommandDetailsPage', { command: _command });
+		this.navController.push('CommandDetailsPage', { command: _command, parent: 'home' });
 	}
 
 	formatDate(_date) {
