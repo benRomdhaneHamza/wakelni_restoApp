@@ -19,7 +19,9 @@ export class AuthProvider {
 		}
 		return new Promise((resolve, reject) => {
 			this.http.post(this.apiUrl + '/login', data,
-				{ headers: { 'Content-Type': 'application/json' } }).subscribe(async _data => {
+				{ headers: { 'Content-Type': 'application/json' } }).subscribe(async ata => {
+					let _data = null;
+					_data = ata;
 					if (!_data.token) return resolve(null);
 					await this.storage.set('currentUser', _data.user);
 					await this.storage.set('token', _data.token);

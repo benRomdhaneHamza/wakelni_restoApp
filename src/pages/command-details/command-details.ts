@@ -9,7 +9,7 @@ import { CommandsProvider } from "../../providers/commands/commands";
 })
 export class CommandDetailsPage {
 
-	command  = {}
+	command  = null
 	parent = null;
 
 	constructor(public navCtrl: NavController,

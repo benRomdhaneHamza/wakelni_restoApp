@@ -12,7 +12,7 @@ import moment from 'moment';
 })
 export class ReadyCommandsPage { // Commands ONTHEWAY
 
-  commands = [];
+  commands = null;
 
   constructor(public navController: NavController,
 		public authProvider: AuthProvider,
