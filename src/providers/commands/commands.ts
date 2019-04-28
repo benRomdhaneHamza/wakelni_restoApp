@@ -32,7 +32,6 @@ export class CommandsProvider {
 	public changeState(_command, _state) {
 		return new Promise(async (resolve, reject) => {
 			const token = await this.storage.get('token');
-			const space = await this.storage.get('space');
 			const headers = {
 				'Content-Type': 'application/json',
 				'x-access-token': token

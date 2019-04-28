@@ -44,6 +44,11 @@
 			</ion-col>
 			<ion-col col-3></ion-col>
 		</ion-row>
+		<ion-row *ngIf="command.code" style="font-size: 1.2em;">
+			<ion-col col-1></ion-col>
+			<ion-col col-7>Code de la commande : </ion-col>
+			<ion-col col-4>{{ command.code }}</ion-col>
+		</ion-row>
 		<ion-row style="font-size: 1.2em;">
 			<ion-col col-1></ion-col>
 			<ion-col col-4>Prix totale : </ion-col>
@@ -54,7 +59,7 @@
 		<ion-row style="font-size: 1.2em;" *ngFor="let meal of command.mealsList">
 			<ion-col col-1></ion-col>
 			<ion-col col-2>
-				<ion-avatar item-start>
+				<ion-avatar item-start *ngIf="meal.image">
 					<img class="avatarMeal" [src]="meal.image.secure_url">
 				</ion-avatar>
 			</ion-col>
@@ -79,7 +84,7 @@
 	</ion-row>
 
 	<ion-row *ngIf="parent == 'accepted'">
-			<ion-col col-1></ion-col>
+		<ion-col col-1></ion-col>
 		<ion-col>
 			<button ion-button color="secondary" round (click)="acceptCommand('ONWAY')">Declarer comme commande prete</button>
 		</ion-col>
